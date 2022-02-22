@@ -1,6 +1,18 @@
 :root {
     --main-blue: #45567d;
     --main-white: #f0f0f0;
+--Wild-Echo-Jewelry-3-1-hex: #828C63;
+--Wild-Echo-Jewelry-3-2-hex: #9BA47E;
+--Wild-Echo-Jewelry-3-3-hex: #DAD8C7;
+--Wild-Echo-Jewelry-3-4-hex: #BF7C63;
+--Wild-Echo-Jewelry-3-5-hex: #856645;
+
+}
+
+
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -11,7 +23,7 @@
 #navbar {
     display: flex;
     justify-content: flex-end;
-    background-color: rgb(132, 132, 156);
+    background-color: var(--Wild-Echo-Jewelry-3-1-hex);
     position: fixed;
     top: 0;
     left: 0;
@@ -28,6 +40,8 @@
     text-decoration: none;
     color: var(--main-white);
     padding: 1rem;
+    font-size: xx-large;
+    color: var(--Wild-Echo-Jewelry-3-3-hex)
 }
 
 .navlist a:hover {
@@ -40,9 +54,96 @@ a {
 
 #welcome-section {
     height: 100vh;
-    background-color: bisque;
+    background-color: var(--Wild-Echo-Jewelry-3-3-hex);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--Wild-Echo-Jewelry-3-4-hex)
 }
 
+h1 {
+    font-size: 4rem;
+    padding: 3rem;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Wild-Echo-Jewelry-3-4-hex);
+}
+
+#projects h1 {
+    color: var(--Wild-Echo-Jewelry-3-3-hex);
+}
+
+.project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-tiles a {
+    margin: 2rem;
+}
+
+.project-tile img {
+    width: 20rem;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Wild-Echo-Jewelry-3-1-hex);
+}
+
+#contact h1 {
+    color: var(--Wild-Echo-Jewelry-3-3-hex);
+}
+.contact-links {
+    display: flex;
+}
+
+.contact-links a {
+display: block;
+color :var(--Wild-Echo-Jewelry-3-3-hex);
+font-size: xx-large;
+padding: 3rem;
+text-shadow: 2px 2px 1px #1f1f1f;
+}
+
+  
+  .contact-link a:hover {
+    transform: translateY(8px);
+  }
+
+  .contact-details {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .contact-details:hover {
+    transform: translateY(12px);
+  }
+
+footer {
+    font-size: small;
+    text-align: center;
+    padding: 3rem 0rem .5rem 0rem;
+    background-color: var(--Wild-Echo-Jewelry-3-1-hex);
+    color: var(--Wild-Echo-Jewelry-3-3-hex);
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 640px / 16px = 40em */
+@media (max-width: 40em) {
+    html {
+      font-size: 50%;
+    }
+  }
