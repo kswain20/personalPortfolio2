@@ -59,11 +59,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--Wild-Echo-Jewelry-3-4-hex)
+    color: var(--Wild-Echo-Jewelry-3-4-hex);
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     padding: 3rem;
 }
 
