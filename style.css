@@ -96,7 +96,8 @@ figcaption{
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: var(--Wild-Echo-Jewelry-3-3-hex)
+    color: var(--Wild-Echo-Jewelry-3-3-hex);
+    font-size: medium;
 }
 
 #contact {
