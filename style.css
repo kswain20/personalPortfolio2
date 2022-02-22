@@ -91,6 +91,13 @@ h1 {
     width: 20rem;
 }
 
+figcaption{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--Wild-Echo-Jewelry-3-3-hex)
+}
+
 #contact {
     display: flex;
     flex-direction: column;
