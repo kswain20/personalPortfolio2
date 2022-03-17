@@ -22,10 +22,12 @@ for (let i = 0; i < films.length; i++) {
 let figure = document.createElement('figure')
 let figImage = document.createElement('img')
 let figCaption = document.createElement('figcaption')
+
 // third, set the source property of the new image to a valid URL or path
 let filmNum = getLastNumber(films[i].url)
 newImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`
 figCaption.textContent = films[i].title
+
 // add the newly created image as a child of the main element
 figure.appendChild(figImage)
 firgure.appendChild(fig.figCaption)
