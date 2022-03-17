@@ -1,12 +1,9 @@
 import { films } from '../data/films.js'
+import { getLastNumber } from '../utils/index.js'
 
 
 console.log(films[0].url)
 
-function getLastNumber(url) {
-    const secondToLastLetterofUrl = url[url.lenghth - 2]
-    return  secondToLastLetterofUrl// return the secont to last number from the url property of a film object
-}
 
     // first get a reference to the main element with the id of 'film list' and store it in a variable.
     let filmList = document.querySelector('#filmList')
