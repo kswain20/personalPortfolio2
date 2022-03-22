@@ -13,7 +13,11 @@ allCharsButton.addEventListener("click", function (event) {
 
 //const result = words.filter(word => word.length > 6)
 const maleCharacters = people.filter((person) => person.gender === "male");
-//todo: filter for female characters
+// filter for female characters
+const femaleCharacters = people.filter((person) => person.gender === "female");
+const femaleCharsButton = document.createElement("button");
+femaleCharsButton.textContent = "Female Characters";
+femaleCharsButton.addEventListener("click", () => populateDOM(femaleCharacters));
 //todo: filter for all other characters: n/a, none, jabba)
 
 const maleCharsButton = document.createElement("button");
@@ -25,6 +29,7 @@ maleCharsButton.addEventListener("click", () => populateDOM(maleCharacters));
 
 header.appendChild(allCharsButton);
 header.appendChild(maleCharsButton);
+header.appendChild(femaleCharsButton);
 
 function populateDOM(characters) {
   removeChildren(main);
