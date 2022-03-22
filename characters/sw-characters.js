@@ -21,7 +21,16 @@ femaleCharsButton.addEventListener("click", () => populateDOM(femaleCharacters))
 
 //todo: filter for  other characters
 //const result = words.filter(word => word.length > 6)
-const otherCharacters = people.filter((person) => person.gender === "none",); //TODO: Get n/a and jabba to show up
+const otherCharacters = people.filter((person) => {
+  if (
+    person.gender === 'n/a' ||
+    person.gender === 'none' ||
+    person.gender === 'hermaphrodite'
+  ){
+    return person
+  }
+})
+
 const otherCharsButton = document.createElement("button");
 otherCharsButton.textContent = "Other Characters";
 otherCharsButton.addEventListener("click", () => populateDOM(otherCharacters));
