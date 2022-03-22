@@ -12,24 +12,35 @@ allCharsButton.addEventListener("click", function (event) {
 });
 
 //const result = words.filter(word => word.length > 6)
-const maleCharacters = people.filter((person) => person.gender === "male");
+
 // filter for female characters
 const femaleCharacters = people.filter((person) => person.gender === "female");
 const femaleCharsButton = document.createElement("button");
 femaleCharsButton.textContent = "Female Characters";
 femaleCharsButton.addEventListener("click", () => populateDOM(femaleCharacters));
-//todo: filter for all other characters: n/a, none, jabba)
+
+//todo: filter for  other characters
+//const result = words.filter(word => word.length > 6)
+const otherCharacters = people.filter((person) => person.gender === "none",); //TODO: Get n/a and jabba to show up
+const otherCharsButton = document.createElement("button");
+otherCharsButton.textContent = "Other Characters";
+otherCharsButton.addEventListener("click", () => populateDOM(otherCharacters));
+
+
+//filter for male
+//const result = words.filter(word => word.length > 6)
+const maleCharacters = people.filter((person) => person.gender === "male");
 
 const maleCharsButton = document.createElement("button");
 maleCharsButton.textContent = "Male Characters";
 maleCharsButton.addEventListener("click", () => populateDOM(maleCharacters));
 
-//todo: add female characters button and have it populate the DOM
-// todo: add other characters button
+
 
 header.appendChild(allCharsButton);
 header.appendChild(maleCharsButton);
 header.appendChild(femaleCharsButton);
+header.appendChild(otherCharsButton);
 
 function populateDOM(characters) {
   removeChildren(main);
