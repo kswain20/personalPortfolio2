@@ -22,12 +22,12 @@ let figCaption = document.createElement('figcaption')
 
 // third, set the source property of the new image to a valid URL or path
 let filmNum = getLastNumber(films[i].url)
-newImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`
+figImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`
 figCaption.textContent = films[i].title
 
 // add the newly created image as a child of the main element
 figure.appendChild(figImage)
-firgure.appendChild(fig.figCaption)
+figure.appendChild(figCaption)
 
 filmList.appendChild(figure)
 }
