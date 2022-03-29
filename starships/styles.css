@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: black;
+    color: yellow;
+}
+
+.mainContainer {
+    display: flex;
+}
+
+.box {
+    background-color: yellow;
+
+}
+
+.box p {
+    font-size: xx-large;
+    text-align: center;
+}
+
+.nav {
+    min-width: 20rem;
+}
+
+.navList {
+    margin: 1rem;
+    list-style-type: none;
+    font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+}
