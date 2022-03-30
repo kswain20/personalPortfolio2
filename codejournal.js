@@ -78,9 +78,59 @@ function sumTwoThings(thing1, thing2) {
     return thing1 + thing2;
 }
 
+// filter method example. Filter returns an array of all elements that 'pass the test'
+const pilots = [
+    {
+        id:2,
+        name: "Wedge Antilles"
+        faction: "Rebels"
+    },
+    {
+        id: 2,
+        name: "Wedge Antilles"
+        faction: "Rebels"
+    },
+    {
+        id: 8,
+        name: "Ciena Ree"
+        faction: "Empire"
+    },
+    {
+        id: 40,
+        name: "Iden Versio"
+        faction: "Empire"
+    }    {
+        id: 66,
+        name: "Thane Kyrell"
+        faction: "Rebels"
+    },
+]
 
+const rebels = pilots.filter(pilot => pilot.faction === "Rebels")
 
+const empire = pilots.filter(pilot) => {
+     return pilot.faction === "Empire"
+}
 
+//Array helper metho 'map' example
 
+let filmURLs = [
+    "https:url",
+    "https:url",
+    "https:url",
 
+]
 
+const filmLengths = filmURLs.map(filmURL => filmURL.length)
+
+const filmPlusMore = filmUrls.map((filmURL) => {
+    let filmObj = {
+        url: filmURL,
+        createDate: Date.now()
+    }
+    return filmObj
+})
+
+const pilotNames = pilots.map(pilot.name)
+
+// teranry (tres leches) operator syntax; condition ?  exprIfTrue : exprIfFalse
