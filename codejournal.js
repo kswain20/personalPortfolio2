@@ -134,3 +134,37 @@ const filmPlusMore = filmUrls.map((filmURL) => {
 const pilotNames = pilots.map(pilot.name)
 
 // teranry (tres leches) operator syntax; condition ?  exprIfTrue : exprIfFalse
+
+//reduce example
+
+const swpilots = [
+    { 
+        id: 10,
+        name: "Poe Dameron",
+        years: 14
+
+    }
+    { 
+        id: 2,
+        name: "Tmein 'snap' wexley",
+        years: 30
+
+    }
+    { 
+        id: 41,
+        name: "Tallissan Lintra",
+        years: 16
+
+    }
+    { 
+        id: 99,
+        name: "Ello Asty",
+        years: 22
+
+    }
+]
+         // fist time through        0    {}        0  +    14    
+const totalYears = swpilots.reduce((acc, pilot) => acc + pilot.years, 0) //the 'accumulated' value of 14 becomes the value of acc
+
+const mostExpPilot = swpilots.reduce((oldest, pilot) => oldest.years > pilot.years ? oldest : pilot 
+)
