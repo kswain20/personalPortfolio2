@@ -33,11 +33,11 @@ removeChildren(shipViewer)
 
 const shipImage = document.createElement('img')
 let shipNum = getLastNumber(shipData.url)
-shipImage.src = 'https://starwars-visualguide.com/assets/img/films/starships/${shipNum}.jpg'
+shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
 shipImage.addEventListener('error', () => {
     console.log("Image error!!!!")
     shipImage.hidden = true
-    shipMessage.textContent = 'The ship known as ${shipData.name} is currently in space port for repairs.'
+    shipMessage.textContent = `The ship known as ${shipData.name} is currently in space port for repairs.`
     modal.classList.toggle('is-active')
 })
 
