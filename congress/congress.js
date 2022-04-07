@@ -1,4 +1,7 @@
 import { senators } from "../data/senators.js";
+import { representatives } from "../data/representatives"
+
+const allMembersofCongress = [...senators, ...representatives] //modern combining of array data... like a genius!
 
 const senatorsDiv = document.quereySelector(".senatorsDiv")
 const seniorityHeader = document.querySelector('.seniority')
@@ -47,11 +50,10 @@ const mostSeniorMember = simplifiedSenators().reduce((acc, senator) =>
   const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator)
   => acc.missedVotePct > senator.missedVotePct ? acc : senator)
 
-  // const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.biggestMissedVotesPct)
+ const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.biggestMissedVotesPct).map(senator => senator.name).join(' and ')
 
-  // console.log(biggestVacationerList)
 
-  seniorityHeader.textContent = `The most senior Senator Name is ${mostSeniorMember.name} and the biggest fans of vacations are TBD`
+  seniorityHeader.textContent = `The most senior Senator Name is ${mostSeniorMember.name} and the biggest fans of vacations are ${biggestVacationerList}.`
   
 simplifiedSenators().forEach(senator => {
     if(senator.loyaltyPct === 100) {

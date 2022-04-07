@@ -1,0 +1,1 @@
+I18n.setProperties({"crm.subform.lineitem.discount.directprice.validation.error":"Please enter a valid Direct Price Value.","crm.subform.lineitem.discount.percentage.validation.error":"Please enter a valid Discount Percentage Value."})

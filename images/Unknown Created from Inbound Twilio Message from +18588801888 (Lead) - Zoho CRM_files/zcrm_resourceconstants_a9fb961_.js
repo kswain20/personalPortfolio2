@@ -1,0 +1,1 @@
+var ResourceConstants={CRM:"CRM",CRMClient:"CRMClient",CRMOrganization:"CRMOrganization",IMAGES:{}};ResourceConstants.IMAGES.CRM="//img.zohocdn.com/crm/images",ResourceConstants.IMAGES.CRMClient="//img.zohocdn.com/crm/CRMClient/images",ResourceConstants.IMAGES.CRMOrganization="//img.zohocdn.com/crm/CRMOrganization/images";

@@ -19,6 +19,22 @@ body {
 
 }
 
+.shipviewer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.shipviewer.img {
+    padding: 10rem;
+}
+
+h1 {
+    font-size: xx-large;
+    color: black;
+    text-align: center;
+}
+
 .box p {
     font-size: xx-large;
     text-align: center;
@@ -36,4 +52,8 @@ body {
 
 a {
     text-decoration: none;
+}
+
+li:hover {
+    background color: white;
 }
