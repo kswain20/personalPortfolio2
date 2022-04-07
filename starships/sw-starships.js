@@ -7,10 +7,10 @@ const shipViewer = document.querySelector('.shipViewer')
 
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
-// TODO: add a click event listener for modal-background div as well
 const shipMessage = document.querySelector('.box p')
 
 closeButton.addEventListener('click', () => modal.classList.toggle('is-active'))
+modal.addEventListener('click', () => modal.classList.toggle('is-active'))
 
 function populateNav() {
     starships.forEach((starship) => {
@@ -37,7 +37,7 @@ shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum
 shipImage.addEventListener('error', () => {
     console.log("Image error!!!!")
     shipImage.hidden = true
-    shipMessage.textContent = `The ship known as ${shipData.name} is currently in space port for repairs.`
+    shipMessage.textContent = `The ${shipData.name} is for authorized viewers only.`
     modal.classList.toggle('is-active')
 })
 

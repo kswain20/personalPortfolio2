@@ -5,6 +5,13 @@
 
 }
 
+h1 {
+    color: yellow;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
 body {
     background-color: black;
     color: yellow;
@@ -12,6 +19,11 @@ body {
 
 .mainContainer {
     display: flex;
+    margin-top: 60px;
+}
+
+.nav {
+    color: yellow;
 }
 
 .box {
@@ -19,21 +31,18 @@ body {
 
 }
 
-.shipviewer {
+.shipViewer {
     height: 100vh;
     display: flex;
     justify-content: center;
+    border-radius: 2px;
+    border-color: yellow;
 }
 
 .shipviewer.img {
     padding: 10rem;
 }
 
-h1 {
-    font-size: xx-large;
-    color: black;
-    text-align: center;
-}
 
 .box p {
     font-size: xx-large;
@@ -56,4 +65,12 @@ a {
 
 li:hover {
     background-color: white;
+}
+
+footer {
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    margin-top: 60px;
+    padding: 15px;
 }
