@@ -12,18 +12,13 @@ const getAPIData = async (url) => {
 
 const pokeGrid = document.querySelector('.pokegrid')
 
-async function loadPokemon(offset, limit) {
-const data = await getAPIData('https://pokeapi.co/api/v2/pokemon/snorlax')
-populatePokeGrid(data)
-
+async function loadPokemon(offset = 0, limit = 25) {
+const data = await getAPIData(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
+for (const nameAndUrl of data.results) {
+    const signlePokemon = await getAPIData(nameAndUrl.url)
+    populatePokeCard(singlePokemon)
 }
 
-function populatePokeGrid(pokemonArray){
-
-    // loop thorugh array and populate individual pokemon cards
-    for (const singlePokemon of pokemonArray.results) {
-        populatePokeCard(pokemon)
-    }
 }
 
 function populatePokeCard(pokemon) {
@@ -32,15 +27,16 @@ function populatePokeCard(pokemon) {
     const pokeCard = document.createElement('div')
     pokeCard.class = 'card' 
     pokeCard.addEventListener('click', () => pokeCard.classList.toggle('is-flipped'))
-    //populate the front of the card
-    populateCardFront(pokemon)
+    // populate the front of the card
+    pokeCard.appendChild(populateCardFront(pokemon))
+    pokeCard.appendChild(populateCardBack(pokemon))
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
 
 function populateCardFront(pokemon) {
     const pokeFront = document.createElement('figure')
-    pokeFront.className = 'cardFace'
+    pokeFront.className = 'card Face'
     const pokeImg = document.createElement('img')
     pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
     const pokeCaption = document.createElement('figcaption')
@@ -52,8 +48,22 @@ function populateCardFront(pokemon) {
 }
 
 function populateCardBack(pokemon) {
+    const pokeBack = document.createElement('div')
+    pokeBack.className = 'cardFace back'
+    const label = document.createElement('h4')
+    label.textContent = 'Abilities'
+    pokeBack.appendChild(label)
 
+    const abilities = document.createElement('ul')
+    pokemon.abilities.forEach((abilityItem) => {
+        const listItem = documentcreateElement('li')
+        listItem.textContent = abilityItem.ability.name
+        abilityList.appendChild(listItem)
+    })
+    pokeBack.appendChild(abilityList)
+
+    return pokeBack
 }
 
 
-loadPokemon(0, 0)
+loadPokemon(700, 50)
