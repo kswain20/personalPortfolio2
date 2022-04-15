@@ -1,1 +1,0 @@
-I18n.setProperties({"crm.button.replyall":"Reply All","crm.view.email.how.summary.works":"How Summary Works","crm.view.email.summary":"View Summary","crm.email.label.forward":"Forward","crm.view.email.summary.not.available":"Summary Not Available"})
