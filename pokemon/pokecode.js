@@ -35,12 +35,23 @@ newButton.addEventListener("click", () => {
     pokeName,
     pokeHeight,
     pokeWeight,
-    [{ability: {name: "run away"}},
-     {ability: {name:"gluttony"}}],
-    ["poison", "ground"]
+    makeAbilitiesArray(pokeAbilities),
+    makeTypesArray(pokeTypes)
   );
   populatePokeCard(newPokemon);
 });
+
+function makeAbilitiesArray(commaString) { // ex of comma string 'rung-away, gluttony'
+return commaString.split(',').map((abilitiyName) => {
+    return { ability: { name: abilitiyName } }
+})
+}
+
+function makeTypesArray(spacedString) { // ex of comma spaced 'poison flying'
+    return commaString.split(' ').map((typeName) => {
+        return { type: { name: abilitiyName } }
+    })
+    }
 
 async function loadPokemon(offset = 0, limit = 25) {
   const data = await getAPIData(
