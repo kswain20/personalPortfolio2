@@ -25,11 +25,13 @@ const newButton = document.createElement("button");
 newButton.textContent = "Make Pokemon";
 pokeHeader.appendChild(newButon);
 newButton.addEventListener("click", () => {
-    const pokeName = prompt("Name your Pokemon", "Pokemon")
-    const pokeHeight = prompt("What is your pokemon's height?", "80")
-    const pokeWeight = prompt("Pokemon Height?", "506")
-    const pokeAbilities = prompt("Give your Pokemon Abilities (use a comma separated list)")
-    const pokeTypes = prompt("Give your pokemon 2 types (separate with a space)")
+  const pokeName = prompt("Name your Pokemon", "Pokemon");
+  const pokeHeight = prompt("What is your pokemon's height?", "80");
+  const pokeWeight = prompt("Pokemon Height?", "506");
+  const pokeAbilities = prompt(
+    "Give your Pokemon Abilities (use a comma separated list)"
+  );
+  const pokeTypes = prompt("Give your pokemon 2 types (separate with a space)");
 
   const newPokemon = new Pokemon(
     pokeName,
@@ -41,24 +43,33 @@ newButton.addEventListener("click", () => {
   populatePokeCard(newPokemon);
 });
 
-function makeAbilitiesArray(commaString) { // ex of comma string 'rung-away, gluttony'
-return commaString.split(',').map((abilitiyName) => {
-    return { ability: { name: abilitiyName } }
-})
+function makeAbilitiesArray(commaString) {
+  // ex of comma string 'rung-away, gluttony'
+  return commaString.split(",").map((abilitiyName) => {
+    return { ability: { name: abilitiyName } };
+  });
 }
 
-function makeTypesArray(spacedString) { // ex of comma spaced 'poison flying'
-    return commaString.split(' ').map((typeName) => {
-        return { type: { name: abilitiyName } }
-    })
-    }
+function makeTypesArray(spacedString) {
+  // ex of comma spaced 'poison flying'
+  return commaString.split(" ").map((typeName) => {
+    return { type: { name: abilitiyName } };
+  });
+}
 
 async function loadPokemon(offset = 0, limit = 25) {
   const data = await getAPIData(
     `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
   );
   for (const nameAndUrl of data.results) {
-    const signlePokemon = await getAPIData(nameAndUrl.url);
+    const singlePokemon = await getAPIData(nameAndUrl.url);
+    const simplifiedPokemon = {
+      id: pokemon.singlePokemon.id,
+      height: singlePokemon.weight,
+      name: singlePokemon.name,
+      abilities: singlePokemon.abilities,
+      types: singlePokemon.types,
+    };
     populatePokeCard(singlePokemon);
   }
 }
@@ -80,7 +91,11 @@ function populatePokeCard(pokemon) {
 
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
-  pokeFront.className = "card Face";
+  pokeFront.className = "cardFace front";
+
+  const pokeType = pokemon.types[0].type.name
+  pokeFront.style.setProperty('background', getPokeTypeColor(pokeType))
+
   const pokeImg = document.createElement("img");
   if (pokemon.id === 9001) {
     pokeImg.src = "../images/pokeball.png";
@@ -105,7 +120,7 @@ function populateCardBack(pokemon) {
   const abilities = document.createElement("ul");
   pokemon.abilities.forEach((abilityItem) => {
     const listItem = documentcreateElement("li");
-    listItem.textContent = abilityItem.ability.name
+    listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
   });
   pokeBack.appendChild(abilityList);
@@ -113,4 +128,15 @@ function populateCardBack(pokemon) {
   return pokeBack;
 }
 
-loadPokemon(700, 50);
+function getPokeTypeColor(pokeType) {
+  //if(pokeType === 'grass') return '#00FF00'
+  let color;
+  switch (pokeType) {
+    case "grass":
+      color = "#00FF00";
+      break;
+  }
+  return color
+}
+
+loadPokemon(0, 3);
