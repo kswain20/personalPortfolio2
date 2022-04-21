@@ -3,47 +3,118 @@
     box-sizing: border-box;
 }
 
-.pokegrid {
-    display: flex;
-    flex-wrap: wrap;
-}
+  header {
+      margin: 0;
+      display: block;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  }
 
-.scene {
+  header h1 {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      margin-bottom: 10px;
+  }
+
+  header h3 {
+    display: flex;
+    justify-content: center;
+    margin: .5rem;
+  }
+
+  body {
+    background-color:#F0DBA5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+
+  .button {
+      width: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(101, 101, 158);
+      color: white;
+      border-radius: 5px;
+  }
+  
+  .pokegrid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50rem;
+    margin-top: 10rem;
+    background: #E7E7E6;
+   
+  }
+  
+  .scene {
     width: 200px;
     height: 260px;
     perspective: 600px;
     margin: 1em;
-}
-
-.card {
+  }
+  
+  .card {
     width: 100%;
     height: 100%;
     transition: transform 1s;
     transform-style: preserve-3d;
     cursor: pointer;
-    position: relative;
+    text-transform: capitalize;
+    color: white;
+    border: solid white;
+    border-radius: 5px;
+    /* position: relative; */
   }
-
+  
   .card.is-flipped {
     transform: rotateY(180deg);
   }
-
+  
   .cardFace {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
   }
+  
+  .front {
+    background-color: aqua;
+    text-align: center;
+    border-radius: 5px;
+    
+  }
+  
+  .back {
+    background: rgb(121, 148, 172);
+    transform: rotateY(180deg);
+    border-radius: 5px;
+    padding-left: 2rem;
+    padding-top: 2rem;
+   
 
-.back {
-    background-color: cadetblue;
-    transform: rotateY(180deg)
-}
+  }
 
-figure img {
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  figure img {
     width: 200px;
-}
+  }
 
-.front {
-    background-color: bisque;
-}
+  ul{
+    list-style-type:'✔️';
+  }
