@@ -141,7 +141,21 @@ function populateCardBack(pokemon) {
   })
   pokeBack.appendChild(abilityList)
 
+
+  const labelA = document.createElement('h4')
+  labelA.textContent = 'Types'
+  pokeBack.appendChild(labelA)
+
+  const typeList = document.createElement('ul')
+  pokemon.types.forEach((typeItem) => {
+    const listItem = document.createElement('li')
+    listItem.textContent = typeItem.types
+    typeList.appendChild(listItem)
+  })
+  pokeBack.appendChild(typeList)
+
   return pokeBack
+
 }
 
 function getPokeTypeColor(pokeType) {

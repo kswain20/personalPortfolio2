@@ -17,6 +17,7 @@
       justify-content: center;
       margin-top: 1rem;
       margin-bottom: 10px;
+      font-size: 4rem;
   }
 
   header h3 {
@@ -40,9 +41,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgb(101, 101, 158);
+      background-color: #c04848;
       color: white;
       border-radius: 5px;
+      margin-top: 1rem;
   }
   
   .pokegrid {
@@ -51,8 +53,9 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 50rem;
-    margin-top: 10rem;
+    margin-top: 5rem;
     background: #E7E7E6;
+    border: ridge #c04848 10px;
    
   }
   
