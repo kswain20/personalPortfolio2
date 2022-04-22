@@ -149,7 +149,7 @@ function populateCardBack(pokemon) {
   const typeList = document.createElement('ul')
   pokemon.types.forEach((typeItem) => {
     const listItem = document.createElement('li')
-    listItem.textContent = typeItem.types
+    listItem.textContent = typeItem.type.name
     typeList.appendChild(listItem)
   })
   pokeBack.appendChild(typeList)
