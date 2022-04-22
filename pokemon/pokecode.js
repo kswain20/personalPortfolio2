@@ -154,6 +154,11 @@ function populateCardBack(pokemon) {
   })
   pokeBack.appendChild(typeList)
 
+  const labelB = document.createElement('h4')
+  labelB.textContent = 'Height'
+  pokeBack.appendChild(labelB)
+
+
   return pokeBack
 
 }
