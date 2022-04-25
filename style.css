@@ -23,7 +23,7 @@ html{
 
 #navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--Wild-Echo-Jewelry-3-1-hex);
     position: fixed;
     top: 0;
@@ -91,6 +91,7 @@ h1 {
 
 .project-tile img {
     width: 20rem;
+    height: 15rem;
 }
 
 figcaption{
