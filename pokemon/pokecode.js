@@ -158,6 +158,14 @@ function populateCardBack(pokemon) {
   labelB.textContent = 'Height'
   pokeBack.appendChild(labelB)
 
+  /*const heightList = document.createElement('ul')
+  pokemon.hieght.forEach((heightItem) => {
+    const listItem = document.createElement('li')
+    listItem.textContent = heightItem.height
+    heightList.appendChild(listItem)
+  })
+  pokeBack.appendChild(heightList)*/
+
 
   return pokeBack
 
