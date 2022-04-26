@@ -13,13 +13,15 @@ const loadedPokemon = []
 
 class Pokemon {
   constructor(name, height, weight, abilities, types) {
+    //would need to add moves property to this consturctor function... if I decide to show moves on the card
     ;(this.id = 9001),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
       (this.types = types)
-  }
+      // would need (this.moves = moves) here... if I decide to show moves
+}
 }
 
 const pokeHeader = document.querySelector('header')
@@ -32,6 +34,8 @@ loadButton.addEventListener('click', async () => {
 if( loadedPokemon.length === 0) {
   removeChildren(pokeGrid)
   await loadPokemon(0,50)
+} else {
+  loadedPokemon.forEach((item) => populatePokeCard(item))
 }
 })
 
@@ -49,17 +53,20 @@ newButton.addEventListener('click', () => {
   const pokeTypes = prompt(
     "Give your pokemon types. (up to 2 types separated by a space)",
   )
-
+    //TODO: prompt the user for a set of moves if you want to show them
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
+    //makeMovesArray woul be called here
   )
   console.log(newPokemon)
   populatePokeCard(newPokemon)
 })
+
+//similar function name 'makeMovesArray' goes here
 
 function makeAbilitiesArray(commaString) {
   // example comma string 'run-away, gluttony'
@@ -89,6 +96,7 @@ async function loadPokemon(offset = 0, limit = 25) {
       abilities: singlePokemon.abilities,
       types: singlePokemon.types,
       moves: singlePokemon.moves.slice(0, 3),
+      hp: singlePokemon.stats[0].base_stat
     }
     loadedPokemon.push(simplifiedPokemon)
     populatePokeCard(simplifiedPokemon)
@@ -177,6 +185,9 @@ function populateCardBack(pokemon) {
   })
   pokeBack.appendChild(heightList)*/
 
+  const pokeHP = document.createElement('h4')
+  pokeHP.textContent = 'HP: '
+  pokeBack.appendChild(pokeHP) 
 
   return pokeBack
 
@@ -233,3 +244,10 @@ typeSelect.addEventListener('change', (event) => {
   removeChildren(pokeGrid)
   pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
 })
+
+function calculateHP() {
+const mostHP = loadedPokemon().reduce((acc, pokemon) => acc.hp > pokemon. hp ? acc : pokemon, {})
+
+const messageArea = document.querySelector('.messageArea')
+messageArea.textContent = `${mostHP.name[0].toUpperCase()}${has the most HP at ${mostHP.hp}` /*(!!!FIXXXX)
+}
