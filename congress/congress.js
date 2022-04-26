@@ -4,7 +4,7 @@ import { representatives } from "../data/representatives.js";
 const allCongressMembers = [...senators, ...representatives];
 
 const senatorDiv = document.querySelector(".senatorsDiv");
-const seniorityHeading = document.querySelector(".seniority");
+const seniorityHeading = document.querySelector(".seniorityHeader");
 const loyaltyList = document.querySelector(".loyaltyList");
 
 function simplifiedSenators() {
