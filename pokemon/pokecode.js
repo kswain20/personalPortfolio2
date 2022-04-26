@@ -1,4 +1,4 @@
-
+import { removeChildren } from '../utils/index.js'
    
 const getAPIData = async (url) => {
   try {
@@ -8,6 +8,8 @@ const getAPIData = async (url) => {
     console.error(error)
   }
 }
+
+const loadedPokemon = []
 
 class Pokemon {
   constructor(name, height, weight, abilities, types) {
@@ -22,6 +24,17 @@ class Pokemon {
 
 const pokeHeader = document.querySelector('header')
 const pokeGrid = document.querySelector('.pokegrid')
+
+const loadButton = document.createElement('button')
+loadButton.textContent = 'Load Pokemon'
+pokeHeader.appendChild(loadButton)
+loadButton.addEventListener('click', async () => {
+if( loadedPokemon.length === 0) {
+  removeChildren(pokeGrid)
+  await loadPokemon(0,50)
+}
+})
+
 const newButton = document.createElement('button')
 newButton.textContent = 'Create Your Own'
 pokeHeader.appendChild(newButton)
@@ -61,8 +74,6 @@ function makeTypesArray(spacedString) {
     return { type: { name: typeName } }
   })
 }
-
-const loadedPokemon = []
 
 async function loadPokemon(offset = 0, limit = 25) {
   const data = await getAPIData(
@@ -215,6 +226,10 @@ function filterPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
 }
 
-await loadPokemon(0, 50)
-
-console.log(filterPokemonByType('grass'))
+const typeSelect = document.querySelector('.typeSelect')
+typeSelect.addEventListener('change', (event) => {
+  const usersTypeChoice = event.target.value.toLowerCase()
+  const pokemonByType = filterPokemonByType(usersTypeChoice)
+  removeChildren(pokeGrid)
+  pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
+})
