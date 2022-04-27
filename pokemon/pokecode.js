@@ -31,9 +31,10 @@ const loadButton = document.createElement('button')
 loadButton.textContent = 'Load Pokemon'
 pokeHeader.appendChild(loadButton)
 loadButton.addEventListener('click', async () => {
-if( loadedPokemon.length === 0) {
   removeChildren(pokeGrid)
+if( loadedPokemon.length === 0) {
   await loadPokemon(0,50)
+  calculateHP()
 } else {
   loadedPokemon.forEach((item) => populatePokeCard(item))
 }
@@ -186,7 +187,7 @@ function populateCardBack(pokemon) {
   pokeBack.appendChild(heightList)*/
 
   const pokeHP = document.createElement('h4')
-  pokeHP.textContent = 'HP: '
+  pokeHP.textContent = 'HP: ${pokemon.hp} '
   pokeBack.appendChild(pokeHP) 
 
   return pokeBack
@@ -246,8 +247,7 @@ typeSelect.addEventListener('change', (event) => {
 })
 
 function calculateHP() {
-const mostHP = loadedPokemon().reduce((acc, pokemon) => acc.hp > pokemon. hp ? acc : pokemon, {})
+  const mostHP = loadedPokemon.reduce((acc, pokemon) => acc.hp > pokemon.hp ? acc : pokemon, {})
 
-const messageArea = document.querySelector('.messageArea')
-messageArea.textContent = `${mostHP.name[0].toUpperCase()}${has the most HP at ${mostHP.hp}` /*(!!!FIXXXX)
-}
+  const messageArea = document.querySelector('.messageArea')
+  messageArea.textContent = `${mostHP.name[0].toUpperCase()}${mostHP.name.substring(1)} has the most HP at ${mostHP.hp}`
