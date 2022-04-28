@@ -19,6 +19,13 @@
       margin-bottom: 1rem;
       font-size: 4rem;
   }
+
+  .typeSelect {
+    background-color: #c04848;
+    color: white;
+    margin: 1rem;
+    border-radius: 5px;
+  }
   
   body header img {
     height: 6rem;
@@ -40,6 +47,16 @@
     margin-top: 2rem;
   }
 
+  button {
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c04848;
+    color: white;
+    border-radius: 5px;
+
+  }
 
   .button {
       width: 5rem;
