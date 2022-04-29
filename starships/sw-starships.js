@@ -9,7 +9,8 @@ const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const shipMessage = document.querySelector('.box p')
 
-closeButton.addEventListener('click', () => modal.classList.toggle('is-active'))
+
+/*closeButton.addEventListener('click', () => modal.classList.toggle('is-active'))*/
 modal.addEventListener('click', () => modal.classList.toggle('is-active'))
 
 function populateNav() {

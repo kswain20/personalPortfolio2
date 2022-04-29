@@ -37,6 +37,8 @@ body {
 
 .nav {
     color: yellow;
+    margin-left: 2rem;
+    margin-right: 15rem;
 }
 
 .box {
@@ -45,14 +47,17 @@ body {
 }
 
 .shipViewer {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 2px;
     border-color: yellow;
+    filter: drop-shadow(0 0 0.75rem white);
+    
 }
 
-.shipviewer.img {
+.shipviewer .img {
     padding: 10rem;
 }
 
