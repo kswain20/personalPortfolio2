@@ -102,13 +102,19 @@ color: white;
 }
 
 main {
-  margin-top: 26rem;
+  margin-top: 14rem;
     background-color: rgb(86, 104, 85);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-top: 3rem;
+}
+
+.seniorityHeader {
+  background-color: rgb(86, 104, 85);
+  color: white;
+  margin-bottom: 2rem;
 }
 
 .partySelect {
