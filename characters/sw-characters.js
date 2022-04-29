@@ -16,7 +16,7 @@ allCharsButton.addEventListener("click", function (event) {
 // filter for female characters
 const femaleCharacters = people.filter((person) => person.gender === "female");
 const femaleCharsButton = document.createElement("button");
-femaleCharsButton.textContent = "Female Characters";
+femaleCharsButton.textContent = "Female";
 femaleCharsButton.addEventListener("click", () => populateDOM(femaleCharacters));
 
 //todo: filter for  other characters
@@ -32,7 +32,7 @@ const otherCharacters = people.filter((person) => {
 })
 
 const otherCharsButton = document.createElement("button");
-otherCharsButton.textContent = "Other Characters";
+otherCharsButton.textContent = "Other";
 otherCharsButton.addEventListener("click", () => populateDOM(otherCharacters));
 
 
@@ -41,7 +41,7 @@ otherCharsButton.addEventListener("click", () => populateDOM(otherCharacters));
 const maleCharacters = people.filter((person) => person.gender === "male");
 
 const maleCharsButton = document.createElement("button");
-maleCharsButton.textContent = "Male Characters";
+maleCharsButton.textContent = "Male";
 maleCharsButton.addEventListener("click", () => populateDOM(maleCharacters));
 
 
