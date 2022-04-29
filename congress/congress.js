@@ -58,7 +58,7 @@ simplifiedSenators().forEach(senator => {
 }
 )
 
-/*function filterSenatorByParty(party) {
+/*function filterSenatorByParty(senator) {
   return senatorsArray.filter((senator) => senator.party === party)
 }
 
@@ -67,5 +67,5 @@ partySelect.addEventListener('change', (event) => {
   const usersTypeChoice = event.target.value.toLowerCase()
   const senatorByParty = filterSenatorByParty(usersTypeChoice)
   removeChildren(pokeGrid)
-  senatorByParty.forEach((partysentator) => populatePokeCard(party))
-})*/
+  senatorByParty.forEach((senator.party) => populatePokeCard(senator.party))
+}) */
