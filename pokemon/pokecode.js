@@ -12,15 +12,13 @@ const getAPIData = async (url) => {
 const loadedPokemon = []
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types) {
-    //would need to add moves property to this consturctor function... if I decide to show moves on the card
+  constructor(name, height, weight, abilities, types,) {
     ;(this.id = 9001),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
       (this.types = types)
-      // would need (this.moves = moves) here... if I decide to show moves
 }
 }
 
@@ -54,20 +52,19 @@ newButton.addEventListener('click', () => {
   const pokeTypes = prompt(
     "Give your pokemon types. (up to 2 types separated by a space)",
   )
-    //TODO: prompt the user for a set of moves if you want to show them
+
+  const pokeMoves = prompt("Give pokemon moves (use a comma separated list)", 0)
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
-    //makeMovesArray woul be called here
   )
   console.log(newPokemon)
   populatePokeCard(newPokemon)
 })
 
-//similar function name 'makeMovesArray' goes here
 
 function makeAbilitiesArray(commaString) {
   // example comma string 'run-away, gluttony'
@@ -174,20 +171,9 @@ function populateCardBack(pokemon) {
   })
   pokeBack.appendChild(typeList)
 
-  const labelB = document.createElement('h4')
-  labelB.textContent = 'Height'
-  pokeBack.appendChild(labelB)
-
-  /*const heightList = document.createElement('ul')
-  pokemon.hieght.forEach((heightItem) => {
-    const listItem = document.createElement('li')
-    listItem.textContent = heightItem.height
-    heightList.appendChild(listItem)
-  })
-  pokeBack.appendChild(heightList)*/
 
   const pokeHP = document.createElement('h4')
-  pokeHP.textContent = 'HP: ${pokemon.hp} '
+  pokeHP.textContent = `HP:${pokemon.hp}`
   pokeBack.appendChild(pokeHP) 
 
   return pokeBack
