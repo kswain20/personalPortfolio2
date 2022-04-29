@@ -36,6 +36,8 @@ main {
 
 figure img {
     height: 20rem;
+    border-radius: 3rem;
+    border: white solid .25rem;
 }
 
 figCaption { 
