@@ -102,7 +102,6 @@ color: white;
 }
 
 main {
-  margin-top: 14rem;
     background-color: rgb(86, 104, 85);
     display: flex;
     justify-content: center;
@@ -111,7 +110,50 @@ main {
     padding-top: 3rem;
 }
 
+header {
+  background-color: rgb(86, 104, 85);
+}
+
+header h3 {
+  padding: 3rem;
+  font-size: x-large;
+  margin-top: 26rem;
+  background-color: rgb(86, 104, 85);
+  color: white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header h4 {
+  background-color: rgb(86, 104, 85);
+  color: white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.loyaltyList {
+  padding-top: 3rem;
+  background-color: rgb(86, 104, 85);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: georgian inside url('/images/star-16.png');
+}
+
 .seniorityHeader {
+  background-color: rgb(86, 104, 85);
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.seniorityHeaderr {
   background-color: rgb(86, 104, 85);
   color: white;
   margin-bottom: 2rem;
