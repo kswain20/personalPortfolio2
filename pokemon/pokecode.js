@@ -12,13 +12,16 @@ const getAPIData = async (url) => {
 const loadedPokemon = []
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types,) {
+  constructor(name, height, weight, abilities, types, hp) {
     ;(this.id = 9001),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
-      (this.types = types)
+      (this.types = types),
+      (this.hp = hp)
+
+
 }
 }
 
@@ -32,7 +35,6 @@ loadButton.addEventListener('click', async () => {
   removeChildren(pokeGrid)
 if( loadedPokemon.length === 0) {
   await loadPokemon(0,50)
-  calculateHP()
 } else {
   loadedPokemon.forEach((item) => populatePokeCard(item))
 }
@@ -46,6 +48,7 @@ newButton.addEventListener('click', () => {
   const pokeName = prompt('Name your pokemon', 'Name')
   const pokeHeight = prompt("Set pokemon's height", 0)
   const pokeWeight = prompt("Set pokemon's weight", 0)
+  const pokeHP = prompt("Set pokemon's HP", 0)
   const pokeAbilities = prompt(
     "Give your pokemon abilities. (use a comma separated list)",
   )
@@ -53,13 +56,13 @@ newButton.addEventListener('click', () => {
     "Give your pokemon types. (up to 2 types separated by a space)",
   )
 
-  const pokeMoves = prompt("Give pokemon moves (use a comma separated list)", 0)
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
+    pokeHP,
   )
   console.log(newPokemon)
   populatePokeCard(newPokemon)
@@ -232,8 +235,8 @@ typeSelect.addEventListener('change', (event) => {
   pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
 })
 
-function calculateHP() {
-  const mostHP = loadedPokemon.reduce((acc, pokemon) => acc.hp > pokemon.hp ? acc : pokemon, {})}
+/*function calculateHP() {
+  const mostHp = loadedPokemon.reduce((acc, pokemon) => acc.hp > pokemon.hp ? acc : pokemon, {})}
 
   const messageArea = document.querySelector('.messageArea')
-  messageArea.textContent = `${mostHP.name[0].toUpperCase()}${mostHP.name.substring(1)} has the most HP at ${mostHP.hp}`
+  messageArea.textContent = `${mostHp.name[0].toUpperCase()}${mostHp.name.substring(1)} has the most HP at ${mostHp.hp}`*/
